@@ -1,0 +1,49 @@
+@charset "utf-8";
+img{
+    max-width:50%;
+}
+h1{
+    color:rgb(242, 136, 150);
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    border:1px solid pink;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height:2em;
+    background-color:rgb(251, 224, 255);
+}
+
+ul{
+    list-style: none;
+    padding:10px 20px 10px;
+}
+
+h2{
+    color:slateblue;
+    text-align: center;
+    font-weight: normal;
+    text-decoration: underline;
+    border-top:5px solid pink;
+    border-bottom:5px solid pink;
+}
+p{
+    color:rgb(86, 46, 139);
+    text-align: center;
+    font-weight: lighter;
+    border:1px solid pink;
+
+}
+
+#camera {
+    margin-left: auto;
+    margin-right: auto;
+    width:100px;
+}
+
+form{
+    margin-left:auto;
+    margin-right:auto;
+    width:100px;
+}
+
+

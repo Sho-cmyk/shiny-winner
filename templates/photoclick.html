@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Capture picture from your webcam</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+</head>
+
+<body>
+    <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+
+    <!--FOR THE SNAPSHOT-->
+    <form method=post enctype=multipart/form-data>
+        <input type="hidden" name="snapShot" id="snapShot">
+        <!-- <input type="hidden" name="arr" value="[1,2,3,4,5]"> 文字列として送信される -->
+        <!-- <input type="submit" value="snapShot" id="btPic" onclick="takeSnapShot()" name="picture1" />  -->
+        <!-- <p id="snapShot"></p> -->
+        <input type="submit" value="送信" onclick="takeSnapShot()">
+    </form>
+    
+    
+</body>
+
+<script>
+    // CAMERA SETTINGS.
+    Webcam.set({
+        width: 220,
+        height: 190,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+    Webcam.attach('#camera');
+
+    // SHOW THE SNAPSHOT.
+    takeSnapShot = function () {
+        Webcam.snap(function (data_uri) {
+            //  document.getElementById('snapShot').innerHTML = 
+            //  '<img src="' + data_uri + '" width="70px" height="50px" />';
+            document.getElementById("snapShot").value = data_uri;
+        });
+    }
+</script>
+</html>

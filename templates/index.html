@@ -1,0 +1,63 @@
+<!doctype html>
+    <html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>麦わら海賊団のメンバーを当ててみよう！</title>
+        <meta name="description" content="麦わら海賊団のメンバーを判別する画像認識アプリです">
+        <link rel="icon" href="static/img/mark.png"> 
+        <link rel="stylesheet" href="./static/stylesheet.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+    </head>
+    <body>
+
+        
+
+        <div class="main">
+            <p><img src="static/img/allmembers.jpg" width="300" height="200" alt="ロゴです"></p>
+            <h1>麦わら海賊団のメンバーを当ててみよう！</h1>
+
+
+            <div id="camera"></div>
+            <form method=post enctype=multipart/form-data>
+                <input type="hidden" name="snapShot" id="snapShot">
+                <input type="submit" value="撮影" onclick="takeSnapShot()">
+            </form>
+            
+            {% if img_data1 %}
+            <p><img src="{{img_data1}}" width="300" height="200" alt="ロゴです"></p>        
+            <div class="answer">{{answer1}}</div>
+            {% endif %}
+            {% if img_data2 %}
+            <p><img src="{{img_data2}}" width="300" height="200" alt="ロゴです"></p>        
+            <div class="answer">{{answer2}}</div>
+            {% endif %}
+        </div>
+
+
+    </body>
+
+
+    <script>
+        // CAMERA SETTINGS.
+        Webcam.set({
+            width: 300,
+            height: 300,
+            image_format: 'jpeg',
+            jpeg_quality: 100
+        });
+        Webcam.attach('#camera');
+    
+        // SHOW THE SNAPSHOT.
+        takeSnapShot = function () {
+            Webcam.snap(function (data_uri) {
+                //  document.getElementById('snapShot').innerHTML = 
+                //  '<img src="' + data_uri + '" width="70px" height="50px" />';
+                document.getElementById("snapShot").value = data_uri;
+            });
+        }
+    </script>
+
+    
+
+
+    </html>
