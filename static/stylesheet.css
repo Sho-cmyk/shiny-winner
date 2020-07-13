@@ -2,7 +2,8 @@
 img{
     max-width:50%;
 }
-h1{
+.title{
+    display:block;
     color:rgb(242, 136, 150);
     font-size: 30px;
     text-align: center;
@@ -28,11 +29,21 @@ h2{
 }
 p{
     color:rgb(86, 46, 139);
+    background-color: transparent;
     text-align: center;
     font-weight: lighter;
     border:1px solid pink;
 
 }
+.answer{
+    background-color: chartreuse;
+}
+
+div{
+    width: 100%;
+}
+
+
 
 #camera {
     margin-left: auto;
@@ -47,3 +58,13 @@ form{
 }
 
 
+#canvas{
+    height: 1500px;
+    margin:0 auto;
+    display:block;
+    filter:url('#shadowed-goo');
+}
+
+svg{
+  display:none;
+}
